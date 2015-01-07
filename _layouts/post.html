@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+<div class="birdlist">
+
+  <h3>Birds in this entry:</h3>
+
+  {% if page.birds %}
+    <div class="birdstring">
+    {% assign birdies = page.birds | sort %}
+    {{ birdies | array_to_sentence_string }}
+    </div>
+  {% endif %}
+</div>
+
+
+<div class="birdlist">
+
+  <h3>Birds in this entry:</h3>
+
+  {% if page.birds %}
+    <div class="birdstring">
+    {% assign birdies = page.birds | sort %}
+    {% for birdy in birdies %}
+    	<a href="{{ site.url }}/birds/{{ birdy }}.html">{{ birdy}}</a>, 
+    {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+</div>
