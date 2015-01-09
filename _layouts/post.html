@@ -33,7 +33,7 @@ layout: default
     <div class="birdstring">
     {% assign birdies = page.birds | sort %}
     {% for birdy in birdies %}
-    	<a href="{{ site.url }}/birds/{{ birdy }}.html">{{ birdy}}</a>, 
+    	<a href="/birds/{{ birdy | slugify }}.html">{{ birdy}}</a>, 
     {% endfor %}
     </div>
   {% endif %}
