@@ -1,13 +1,6 @@
 ---
-layout: post
 title: Birding contest
-description: 
-author: Dave
-email: dave@ipadabroad.co.uk
 date: 2015-01-04 21:30
-copyright: © David Tyler 2015
-category: news
-tags: []
 birds:
   - Meadow pipit
   - Black headed gull

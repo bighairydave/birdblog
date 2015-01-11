@@ -25,16 +25,20 @@ layout: default
 </div>
 
 
+Better:
+
 <div class="birdlist">
 
   <h3>Birds in this entry:</h3>
 
   {% if page.birds %}
     <div class="birdstring">
-    {% assign birdies = page.birds | sort %}
     {% for birdy in birdies %}
-    	<a href="/birds/{{ birdy | slugify }}.html">{{ birdy}}</a>, 
+      {% if birdy != birdies.last %}
+      	<a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}.html">{{ birdy}}</a>,
+      {% endif %} 
     {% endfor %}
+    and <a href="/birds/{{ birdies.last | downcase | replace: ' ', '-' }}.html">{{ birdies.last}}</a>.
     </div>
   {% endif %}
 </div>
