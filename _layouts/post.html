@@ -43,4 +43,20 @@ Better:
   {% endif %}
 </div>
 
+<div class="birdlist">
+
+  {% if page.lifelist %}
+    <h3>Lifelist additions for this entry:</h3>
+    <div class="birdstring">
+    {% assign lifers = page.lifelist | sort %}
+    {{ lifers | array_to_sentence_string }}
+    </div>
+  {% else %}
+    <h3>No lifers today!</h3>
+  {% endif %}
+
+  <a href="/lifelist/">View my life list</a>
+</div>
+
+
 </div>
