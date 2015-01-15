@@ -2,6 +2,10 @@
 layout: default
 ---
 
-{% for bird in page.lifelist %}
-  <h2>{{ bird }}</h2>
+All the birds!
+
+<ol>
+{% for birdy in page.lifelist %}
+  <li><a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}.html">{{ birdy}}</a></li>
 {% endfor %}
+</ol>
