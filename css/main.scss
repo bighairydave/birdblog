@@ -40,11 +40,15 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    800px;
-
 $on-palm:          600px;
 $on-laptop:        800px;
 
+//breakpoints for media queries
 
+$small: 480px;
+$medium: 640px;
+$large: 960px;
+$oversize: 1120px;
 
 // Using media queries with like this:
 // @include media-query($on-palm) {
