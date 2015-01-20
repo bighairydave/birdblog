@@ -47,7 +47,7 @@ nav[role=navigation] li a {
     border-bottom: 1px solid #808080;
 }
 
-@media screen and (min-width: 48.25em) {
+@media screen and (min-width: $medium) {
     a.menu-link {
        display: none;
     }

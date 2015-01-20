@@ -168,41 +168,18 @@ $susy: (
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 2em;
     letter-spacing: -1px;
     line-height: 1;
 
-    @include media-query($on-laptop) {
-        font-size: 36px;
+    @media (min-width: $large) {
+        font-size: 2.5em;
     }
 }
 
 .post-content {
     margin-bottom: $spacing-unit;
-
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
-
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
+    // trimmed a load of media queries here to do with heading size.
 }
 
 /**
