@@ -1,3 +1,8 @@
+/* Makes border-box properties */
+@include border-box-sizing;
+
+/******** below this line is the Jekyll default theme *************/
+
 /**
  * Reset some basic elements
  */
@@ -20,6 +25,8 @@ body {
     font-weight: 300;
     color: $text-color;
     background-color: $background-color;
+    background-image: url('images/foggy_birds.png');
+    background-attachment: fixed;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -80,7 +87,8 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 400;
+    font-family: $alternate-font-family;
 }
 
 
