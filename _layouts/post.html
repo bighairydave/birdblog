@@ -8,39 +8,43 @@ layout: default
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+  <div class="post-wrapper">
 
-<div class="birdlist">
+    <article class="post-content">
+      {{ content }}
+    </article>
 
-  <h3>Birds in this entry:</h3>
+    <div class="birdlist">
 
-  {% if page.birds %}
-    <div class="birdstring">
-    {% assign birdies = page.birds | sort %}
-    {{ birdies | array_to_sentence_string }}
+      <h3>Birds in this entry:</h3>
+
+      {% if page.birds %}
+        <div class="birdstring">
+        {% assign birdies = page.birds | sort %}
+        {{ birdies | array_to_sentence_string }}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
-</div>
 
 
-Better:
+    Better:
 
-<div class="birdlist">
+    <div class="birdlist">
 
-  <h3>Birds in this entry:</h3>
+      <h3>Birds in this entry:</h3>
 
-  {% if page.birds %}
-    <div class="birdstring">
-    {% for birdy in birdies %}
-      {% if birdy != birdies.last %}
-      	<a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}.html">{{ birdy}}</a>,
-      {% endif %} 
-    {% endfor %}
-    and <a href="/birds/{{ birdies.last | downcase | replace: ' ', '-' }}.html">{{ birdies.last}}</a>.
+      {% if page.birds %}
+        <div class="birdstring">
+        {% for birdy in birdies %}
+          {% if birdy != birdies.last %}
+          	<a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}.html">{{ birdy}}</a>,
+          {% endif %} 
+        {% endfor %}
+        and <a href="/birds/{{ birdies.last | downcase | replace: ' ', '-' }}.html">{{ birdies.last}}</a>.
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
-</div>
+
+  </div><!--post-wrapper-->
 
 </div>
