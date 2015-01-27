@@ -1,0 +1,57 @@
+---
+layout: "default"
+#title: "Housekeeping"
+---
+
+<h2>Posts without a category</h2>
+
+<p>Finds posts that are labeled with neither 'birding' nor 'blogging'.</p>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+	    {% if post.category != 'birding' and post.category != 'blogging' %}
+	      <li>
+	        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+	        <h2>
+	          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	        </h2>
+
+	      </li>
+	    {% endif %}
+    {% endfor %}
+  </ul>
+
+<h2>Birding posts without Birds</h2>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+	    {% if post.category == 'birding' and post.birds == null %}
+	      <li>
+	        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+	        <h2>
+	          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	        </h2>
+
+	      </li>
+	    {% endif %}
+    {% endfor %}
+  </ul>
+
+<h2>Birding posts without Location</h2>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+	    {% if post.category == 'birding' and	 post.location == null %}
+	      <li>
+	        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+	        <h2>
+	          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	        </h2>
+
+	      </li>
+	    {% endif %}
+    {% endfor %}
+  </ul>

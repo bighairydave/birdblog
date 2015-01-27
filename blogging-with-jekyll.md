@@ -27,3 +27,4 @@ There are many blogging services out there that are great for blogging. I use Wo
 
 * It's really nerdy - you need to be a bit computer-savvy and comfortable with fiddling about to make use of it.
 * If you want to write blog posts on the go or from different computers there's even more setting up required - although some people enjoy that sort of thing.
+
