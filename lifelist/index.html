@@ -6,6 +6,6 @@ All the birds!
 
 <ol>
 {% for birdy in page.lifelist %}
-  <li><a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}.html">{{ birdy}}</a></li>
+  <li><a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}">{{ birdy}}</a></li>
 {% endfor %}
 </ol>

@@ -38,10 +38,10 @@ layout: default
         <div class="birdstring">
         {% for birdy in birdies %}
           {% if birdy != birdies.last %}
-          	<a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}.html">{{ birdy}}</a>,
+          	<a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}">{{ birdy}}</a>,
           {% endif %} 
         {% endfor %}
-        and <a href="/birds/{{ birdies.last | downcase | replace: ' ', '-' }}.html">{{ birdies.last}}</a>.
+        and <a href="/birds/{{ birdies.last | downcase | replace: ' ', '-' }}">{{ birdies.last}}</a>.
         </div>
       {% endif %}
     </div>
