@@ -1,0 +1,72 @@
+.menubar {
+    background: rgba($brand-color, 0.5);
+    height: 3em;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    line-height: 1;
+    a, a:visited {
+        color: white;
+        font-family: $alternate-font-family;
+        text-decoration: none;
+        transition: all 0.25s linear;
+    }
+    a:hover {
+        background: lighten($brand-color, 10%);
+    }
+}
+
+/* Brad Frost's responsive menubar http://codepen.io/bradfrost/pen/sHvaz */
+
+a.menu-link {
+    display: block;
+    padding: 1em 1.5em;
+    margin: 0;
+}
+nav[role=navigation] {
+    clear: both;
+    transition: all 0.3s ease-out;
+}
+.js nav[role=navigation] {
+    overflow: hidden;
+    max-height: 0;
+}
+nav[role=navigation].active {
+    max-height: 15em;
+}
+nav[role=navigation] ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #808080;
+    background: rgba($brand-color, 0.8);
+}
+nav[role=navigation] li a {
+    display: block;
+    padding: 0.8em;
+    border-bottom: 1px solid #808080;
+}
+
+@media screen and (min-width: $medium) {
+    a.menu-link {
+       display: none;
+    }
+    .js nav[role=navigation] {
+        max-height: none;
+    }
+    nav[role=navigation] ul {
+        //margin: 0 0 0 -0.25em;
+        border: 0;
+        background: none;
+    }
+    
+    nav[role=navigation]  li {
+        display: inline-block;
+        //margin: 0 0.25em;
+    }
+    nav[role=navigation] li a {
+        border: 0;
+        height: 3em;
+    }
+}
+

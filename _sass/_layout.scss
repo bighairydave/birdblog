@@ -1,91 +1,83 @@
+/* Changing Susy default global settings */
+$susy: (
+  /* Tells Susy to use 12 columns */
+  columns: 12,
+  /* Tells Susy that the container has a max-width of 1120px */
+  container: 1120px,
+  /* Tells Susy to use border-box */
+  global-box-sizing: border-box 
+  );
+
+
+.wrap {
+  @include container;
+}
+
+/* Tells Susy there's 8 columns in the content */
+.content {
+    @media (min-width: $large) {
+      @include span(8); 
+    }
+}
+
+/* Tells Susy there's 4 columns in the sidebar, and its the last item on the row. */
+.sidebar {
+    border-top: 1px solid $grey-color-light;
+    @media (min-width: $large) {
+      @include span(4 last);
+    }
+}
+
+
+/* Equal height columns */
+.container { overflow: hidden; }
+.content, .sidebar {
+    padding-bottom: 1000em;
+    margin-bottom: -999.5em;
+}
+
+
+/******** below this line is the Jekyll default theme *************/
+
 /**
  * Site header
  */
 .site-header {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    min-height: 242px;
+    background: #222629 url('images/panorama.jpg');
 
     // Positioning context for the mobile navigation icon
     position: relative;
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 1.5em;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+    font-family: $alternate-font-family;
+    font-weight: 700;
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: white;
+    }
+
+    @media (min-width: $medium) {
+        font-size: 2.5em;
+    }
+    @media (min-width: $large) {
+        font-size: 3em;
     }
 }
 
-.site-nav {
-    float: right;
-    line-height: 56px;
-
-    .menu-icon {
-        display: none;
-    }
-
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-        }
-    }
+.tagline {
+    
+    font-family: $alternate-font-family;
 }
-
 
 
 /**
@@ -93,7 +85,7 @@
  */
 .site-footer {
     border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+    //padding: $spacing-unit 0;
 }
 
 .footer-heading {
@@ -107,55 +99,27 @@
     margin-left: 0;
 }
 
-.footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
-
 .footer-col {
-    float: left;
     margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
+    @media (min-width: $large) {
+      @include span(4);
+    }
 }
 
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+    @media (min-width: $large) {
+      @include span(4);
+    }
 }
 
 .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+    @media (min-width: $large) {
+      @include span(4 last);
     }
 }
-
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
 
 
 /**
@@ -175,6 +139,7 @@
 
     > li {
         margin-bottom: $spacing-unit;
+        @include text-background;
     }
 }
 
@@ -193,44 +158,51 @@
 /**
  * Posts
  */
+
+.post-wrapper {
+    @include text-background;
+}
+
 .post-header {
     margin-bottom: $spacing-unit;
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 2em;
     letter-spacing: -1px;
     line-height: 1;
 
-    @include media-query($on-laptop) {
-        font-size: 36px;
+    @media (min-width: $large) {
+        font-size: 2.5em;
     }
 }
 
 .post-content {
     margin-bottom: $spacing-unit;
+    // trimmed a load of media queries here to do with heading size.
+}
 
-    h2 {
-        font-size: 32px;
+/**
+ * Sidebar
+ */
 
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
+.sidebar {
+  background: darken($background-color, 10%) url('images/downfeathers.png');
+  ul {
+    list-style: none;
+  }
+  .widget > div {
 
-    h3 {
-        font-size: 26px;
+    margin: 1em auto;
+  }
+}
 
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
-    }
+.sidebar-content {
+    padding: 1em;
+}
 
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
-    }
+.headshot {
+    max-width: 320px;
+    width: 100%;
+    margin: auto;
 }

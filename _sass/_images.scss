@@ -1,0 +1,14 @@
+// Styles for images added by various plugins
+
+// https://github.com/bighairydave/jekyll-flickr
+
+img.flickr_photo {
+	//margin: auto;
+	padding: 1em;
+	border: 1px solid rgb(128,128,128);
+}
+
+a.flickr_photo {
+	text-align: center;
+	display: block;
+}

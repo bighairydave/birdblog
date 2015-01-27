@@ -1,14 +1,15 @@
 # Site settings
-title: Dave's Bird Blog
+title: Adventures in Bird Watching
+tagline: "Wherein 'adventure' means 'making lists'."
 email: dave@bighairydave.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A blog about birds, but more importantly a blog about blogging about birds. Yeah.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: bighairydave
 github_username:  bighairydave
+flickr:
+  api_key: aeb3b3ace06117d0e1981c8b2ec09296
 
 defaults:
   -
@@ -23,6 +24,15 @@ defaults:
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 
 
+exclude:
+ - README.md
+ - deploy.thor
+ - ftp_configuration.yml
+ - Gemfile
+ - Gemfile.lock
+ - Guardfile
+ - Rakefile
