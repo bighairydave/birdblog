@@ -20,7 +20,9 @@ layout: default
   </thead>
   <tbody>
   {% for post in site.posts reversed %}
-    {% if post.birds contains page.bird %}
+    {% assign birdlist = post | map: 'birds' | downcase %}
+    {% assign birdy = page.bird | downcase %}
+    {% if birdlist contains birdy %}
       <tr>
         <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a></td>
         <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
