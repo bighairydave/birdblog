@@ -6,14 +6,13 @@ module Jekyll
         if post.data['birds']
           post.data['lifelist'] = []
           for bird in post.data['birds']
-            # Should maybe revamp this storing a hash of arrays with additional data? First date, er, what else?
+            # Alternate approach would be to generate a hash of arrays of post ids for each bird, but let's go with nested loops for now!
             unless lifelist.include? bird.capitalize # Using capitalize here to prevent dupes.
               post.data['lifelist'].push(bird)  # add to lifelist array on post
               lifelist.push(bird.capitalize)  # add to lifelist for page
               # Create page for bird unless already on lifelist
               site.pages << BirdPage.new(site, "/", "birds/#{ bird.downcase.gsub(" ", "-") }", bird)
             end
-            # push post info to bird's page 
           end
         end
       end

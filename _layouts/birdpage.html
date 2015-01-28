@@ -2,18 +2,33 @@
 layout: default
 ---
 
-{{ page.bird }}
+<h2>{{ page.bird }}</h2>
 
-<p>To Do
+<div class="birdpage">
 
-<p>For each post that has this bird in its birds array
-
-add its title and such to this page.
-
-<p>Look at category page or tag page plugins to see how
-
-<p>Another approach is to build a hash of arrays before building any of the bird pages
-
-Remove everything below this line!
+<p>Posts listing {{ page.bird }}</p>
 
 
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>(Location)</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in site.posts reversed %}
+    {% if post.birds contains page.bird %}
+      <tr>
+        <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a></td>
+        <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+        <td>{{ post.location }}</td>
+      </tr>
+    {% endif %}
+  {% endfor %}
+  </tbody>
+</table>
+
+</div>
