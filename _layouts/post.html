@@ -14,28 +14,16 @@ layout: default
       {{ content }}
     </article>
 
+<hr>
+
     <div class="birdlist">
 
       <h3>Birds in this entry:</h3>
+
 
       {% if page.birds %}
         <div class="birdstring">
         {% assign birdies = page.birds | sort %}
-        {{ birdies | array_to_sentence_string }}
-        </div>
-      {% endif %}
-    </div>
-
-
-    Better:
-
-    <div class="birdlist">
-
-      <h3>Birds in this entry:</h3>
-
-
-      {% if page.birds %}
-        <div class="birdstring">
         {% for birdy in birdies %}
           {% if birdy != birdies.last %}
           	<a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}">{{ birdy}}</a>,
@@ -46,22 +34,28 @@ layout: default
       {% endif %}
     </div>
 
-  </div><!--post-wrapper-->
+  
 
 <div class="birdlist">
 
   {% if page.lifelist %}
+  <hr>
     <h3>Lifelist additions for this entry:</h3>
     <div class="birdstring">
     {% assign lifers = page.lifelist | sort %}
-    {{ lifers | array_to_sentence_string }}
+        {% for birdy in lifers %}
+          {% if birdy != lifers.last %}
+            <a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}">{{ birdy}}</a>,
+          {% endif %} 
+        {% endfor %}
+        and <a href="/birds/{{ birdies.last | downcase | replace: ' ', '-' }}">{{ birdies.last}}</a>.
     </div>
   {% else %}
     <h3>No lifers today!</h3>
   {% endif %}
-
+  <hr>
   <a href="/lifelist/">View my life list</a>
 </div>
 
-
+</div><!--post-wrapper-->
 </div>

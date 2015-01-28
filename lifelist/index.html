@@ -2,10 +2,12 @@
 layout: default
 ---
 
-All the birds!
+Not quite a true lifelist: official records begin in 2014 but I've seen birds before that date! Maybe I should sneak Red Kite, Treecreeper
 
+<div class="birdlist">
 <ol>
 {% for birdy in page.lifelist %}
   <li><a href="/birds/{{ birdy | downcase | replace: ' ', '-' }}">{{ birdy}}</a></li>
 {% endfor %}
 </ol>
+</div>

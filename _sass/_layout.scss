@@ -182,6 +182,10 @@ $susy: (
     // trimmed a load of media queries here to do with heading size.
 }
 
+.birdlist a:visited {
+    color: $brand-color;
+}
+
 /**
  * Sidebar
  */
